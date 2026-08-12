@@ -72,7 +72,6 @@ function Program() {
   useEffect(() => {
     document.title = "FRC Programming Practice | Live Challenges";
   }, []);
-
   useEffect(() => {
     if (!location.hash) return;
 
@@ -125,7 +124,7 @@ function Program() {
     setAiContent("");
 
     try {
-      const response = await fetch("https://frc-programming-practice.onrender.com/create", {
+      const response = await fetch(import.meta.env.VITE_LINK + "/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
